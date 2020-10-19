@@ -1,0 +1,14 @@
+{{ define "Show" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+      <h2> Register {{ .Id }} </h2>
+      <p>Name: {{ .Name }}</p>
+      <p>Flag: {{ .Flag }}</p>
+      <p>Image:  <p><img alt="{{ .Name }}" src="data:image/jpeg;base64,{{ .ImageBytes }}"/></p></p><br /> <a href="/edit?id={{ .Id }}">Edit</a></p>
+<script type="text/javascript">
+$(document).ready(function(){
+      console.log("{{ .ImageBytes }}");
+});
+</script>
+  {{ template "Footer" }}
+{{ end }}
